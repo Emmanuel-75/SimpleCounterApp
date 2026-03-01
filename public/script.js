@@ -10,6 +10,7 @@ let counterState = 0;
 let add = '+1';
 let minus = '-1';
 
+
 setTimeout(()=>{
     title.classList.remove("animate-bounce");
     title.classList.add('animate-pulse');
@@ -25,7 +26,21 @@ function Status(text){
 function updateCounter() {
     counter.textContent = counterState;
     minusButton.disabled = counterState <= 0;
+    if (minusButton.disabled){
+        minusButton.classList.remove('bg-purple-300');
+        minusButton.classList.add('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+    }else{
+        minusButton.classList.remove('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+        minusButton.classList.add('bg-purple-300');
+    }
     resetButton.disabled = counterState <= 0;
+    if (resetButton.disabled){
+        resetButton.classList.remove('bg-purple-300');
+        resetButton.classList.add('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+    }else{
+        resetButton.classList.remove('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+        resetButton.classList.add('bg-purple-300');
+    }
 }
 
 addButton.addEventListener('click', () => {
