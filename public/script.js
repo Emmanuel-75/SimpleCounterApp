@@ -28,17 +28,21 @@ function updateCounter() {
     minusButton.disabled = counterState <= 0;
     if (minusButton.disabled){
         minusButton.classList.remove('bg-purple-300');
+        minusButton.classList.remove('active:scale-110','hover:ring-4','hover:ring-purple-700');
         minusButton.classList.add('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
     }else{
         minusButton.classList.remove('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+        minusButton.classList.add('active:scale-110','hover:ring-4','hover:ring-purple-700');
         minusButton.classList.add('bg-purple-300');
     }
     resetButton.disabled = counterState <= 0;
     if (resetButton.disabled){
         resetButton.classList.remove('bg-purple-300');
+        resetButton.classList.remove('active:scale-110','hover:ring-4','hover:ring-purple-700');
         resetButton.classList.add('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
     }else{
         resetButton.classList.remove('bg-gray-500', 'cursor-not-allowed', 'opacity-60');
+        resetButton.classList.add('active:scale-110','hover:ring-4','hover:ring-purple-700');
         resetButton.classList.add('bg-purple-300');
     }
 }
